@@ -1,0 +1,527 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МиканиАрт - рекламное агентство в Сочи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+            color: #FFFFFF;
+            background-color: #2A526E;
+            line-height: 1.6;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+            background-color: #2A526E;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            color: #2A526E;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            display: block;
+        }
+
+        .nav-link:hover {
+            color: #2EC4B6;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            padding: 12px 15px;
+            display: block;
+            color: #2A526E;
+            text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f5f5f5;
+            color: #2EC4B6;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(42, 82, 110, 0.7), rgba(42, 82, 110, 0.9)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5') center/cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .services {
+            padding: 80px 5%;
+            background-color: #2A526E;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about {
+            padding: 80px 5%;
+            background: #25485F;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .team-photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .team-photo {
+            height: 150px;
+            background: #1E3F52;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .portfolio {
+            padding: 80px 5%;
+            background-color: #2A526E;
+        }
+
+        .videos-section {
+            margin-bottom: 50px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .video-item {
+            position: relative;
+            height: 200px;
+            background: #1E3F52;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-slider {
+            margin-top: 30px;
+        }
+
+        .slider-container {
+            overflow-x: auto;
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .slider-item {
+            min-width: 300px;
+            height: 200px;
+            background: #1E3F52;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .contacts {
+            padding: 80px 5%;
+            background: #25485F;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            background: #2EC4B6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #26a094;
+        }
+
+        .footer {
+            background: #1E3F52;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-contacts {
+            margin-bottom: 20px;
+        }
+
+        .it-partner {
+            font-size: 1.2rem;
+            color: #2EC4B6;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-item {
+                margin: 5px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.svg" alt="Логотип МиканиАрт" style="width:180px; height:180px;">
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="ads.html" class="nav-link">Виды рекламы</a>
+                <div class="dropdown">
+                    <a href="ads.html#tv">Телевидение</a>
+                    <a href="ads.html#radio">Радио</a>
+                    <a href="ads.html#outdoor">Наружная реклама</a>
+                    <a href="ads.html#indoor">Indoor</a>
+                    <a href="ads.html#elevators">Лифты</a>
+                    <a href="ads.html#bus-tv">Маршрутное ТВ</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="production.html" class="nav-link">Продакшн</a>
+                <div class="dropdown">
+                    <a href="production.html#video">Изготовление видеороликов</a>
+                    <a href="production.html#audio">Изготовление аудиороликов</a>
+                    <a href="production.html#adaptation">Адаптация видео/аудио</a>
+                    <a href="production.html#films">Производство видеофильмов</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="for-clients.html" class="nav-link">Рекламодателям</a>
+                <div class="dropdown">
+                    <a href="for-clients.html#presentation">Презентация</a>
+                    <a href="for-clients.html#offers">Акции</a>
+                    <a href="for-clients.html#partners">Партнёры</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">О компании</a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html#contacts" class="nav-link">Контакты</a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <h1>Реклама. Продакшн. Технологии.</h1>
+        <p>МиканиАрт — полный цикл рекламных решений в Сочи</p>
+    </section>
+
+    <section class="services">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📢</div>
+                <h3>Реклама</h3>
+                <p>Полный спектр рекламных услуг: от наружной рекламы до цифровых решений. Эффективные кампании для вашего бизнеса.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>Продакшн</h3>
+                <p>Производство видеороликов, аудиороликов, профессиональная съемка и пост-продакшн. Креативные решения для вашего бренда.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>IT-услуги</h3>
+                <p>Создание сайтов: лендинги, корпоративные сайты, интернет-магазины. Современные решения для вашего онлайн-присутствия.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>О компании</h2>
+                <p>Работаем в Сочи с 2015 года. Знаем рынок Краснодарского края и понимаем, как создать эффективную рекламу для вашего бизнеса.</p>
+                <p>Наша миссия — предоставлять полный цикл рекламных решений, объединяя креатив, технологии и стратегию для достижения максимальных результатов.</p>
+                <p>Команда профессионалов с многолетним опытом работы в рекламной индустрии, продакшне и цифровом маркетинге.</p>
+            </div>
+            <div class="team-photos">
+                <div class="team-photo">Фото сотрудника 1</div>
+                <div class="team-photo">Фото сотрудника 2</div>
+                <div class="team-photo">Фото сотрудника 3</div>
+                <div class="team-photo">Фото сотрудника 4</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2 class="section-title">Портфолио</h2>
+        
+        <div class="videos-section">
+            <h3>Видео-работы</h3>
+            <div class="videos-grid">
+                <div class="video-item">
+                    <video muted autoplay loop playsinline>
+                        <source src="video1.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video muted autoplay loop playsinline>
+                        <source src="video2.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-slider">
+            <h3>Фото-работы</h3>
+            <div class="slider-container">
+                <div class="slider-item">Работа 1</div>
+                <div class="slider-item">Работа 2</div>
+                <div class="slider-item">Работа 3</div>
+                <div class="slider-item">Работа 4</div>
+                <div class="slider-item">Работа 5</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Свяжитесь с нами</h2>
+                <div class="contact-details">
+                    <div class="contact-item">МиканиАрт</div>
+                    <div class="contact-item">г. Сочи</div>
+                    <div class="contact-item">Телефон: +7 (XXX) XXX-XX-XX</div>
+                    <div class="contact-item">Email: info@mikaniart.ru</div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/7XXXXXXXXXX" class="social-btn" target="_blank">Написать в WhatsApp</a>
+                <a href="https://t.me/username" class="social-btn" target="_blank">Написать в Telegram</a>
+                <a href="mailto:info@mikaniart.ru" class="social-btn">Написать на почту</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-contacts">
+                <div>МиканиАрт © 2025</div>
+                <div>г. Сочи, +7 (XXX) XXX-XX-XX</div>
+                <div>info@mikaniart.ru</div>
+            </div>
+            <div class="it-partner">Создание сайтов > ваш IT-партнёр от МиканиАрт</div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
