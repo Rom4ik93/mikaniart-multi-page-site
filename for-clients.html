@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рекламодателям — МиканиАрт</title>
+    <title>МиканиАрт - рекламное агентство в Сочи</title>
     <style>
         * {
             margin: 0;
@@ -93,39 +93,210 @@
             color: #2EC4B6;
         }
 
-        .main-content {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #25485F;
-            border-radius: 10px;
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(42, 82, 110, 0.7), rgba(42, 82, 110, 0.9)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5') center/cover;
         }
 
-        .clients-section h1 {
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .services {
+            padding: 80px 5%;
+            background-color: #2A526E;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about {
+            padding: 80px 5%;
+            background: #25485F;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
-        .clients-category {
-            margin-top: 40px;
+        .team-photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
-        .clients-category h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #2EC4B6;
+        .team-photo {
+            height: 150px;
+            background: #1E3F52;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
         }
 
-        .clients-category p {
-            font-size: 1.1rem;
+        .portfolio {
+            padding: 80px 5%;
+            background-color: #2A526E;
+        }
+
+        .videos-section {
+            margin-bottom: 50px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .video-item {
+            position: relative;
+            height: 200px;
+            background: #1E3F52;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-slider {
+            margin-top: 30px;
+        }
+
+        .slider-container {
+            overflow-x: auto;
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .slider-item {
+            min-width: 300px;
+            height: 200px;
+            background: #1E3F52;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .contacts {
+            padding: 80px 5%;
+            background: #25485F;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
             margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            background: #2EC4B6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #26a094;
         }
 
         .footer {
             background: #1E3F52;
             padding: 40px 5%;
             text-align: center;
-            margin-top: 60px;
         }
 
         .footer-content {
@@ -143,6 +314,66 @@
             margin-top: 20px;
         }
 
+        .main-content {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #25485F;
+            border-radius: 10px;
+        }
+
+        .ads-section h1,
+        .production-section h1,
+        .clients-section h1,
+        .about-full h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .ads-category,
+        .production-category,
+        .clients-category {
+            margin-top: 40px;
+        }
+
+        .ads-category h2,
+        .production-category h2,
+        .clients-category h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2EC4B6;
+        }
+
+        .ads-category p,
+        .production-category p,
+        .clients-category p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .history, .mission, .team {
+            margin-top: 40px;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2EC4B6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            background: #26a094;
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -158,13 +389,31 @@
             .nav-item {
                 margin: 5px 10px;
             }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="logo.svg" alt="Логотип МиканиАрт" style="width:180px; height:180px;">
+            <a href="index.html">
+                <img src="logo.svg" alt="Логотип МиканиАрт" style="width:180px; height:180px;">
+            </a>
         </div>
         <ul class="nav-menu">
             <li class="nav-item">
@@ -234,8 +483,13 @@
                 <div>г. Сочи, +7 (XXX) XXX-XX-XX</div>
                 <div>info@mikaniart.ru</div>
             </div>
+            <div style="margin-top: 10px;">
+                <a href="index.html" class="social-btn" style="display:inline-block;">На главную</a>
+            </div>
             <div class="it-partner">Создание сайтов → ваш IT-партнёр от МиканиАрт</div>
         </div>
     </footer>
+
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 </body>
 </html>
