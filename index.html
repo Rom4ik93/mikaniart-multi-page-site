@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МиканиАрт - рекламное агентство в Сочи</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
             color: #FFFFFF;
             background-color: #2A526E;
             line-height: 1.6;
@@ -27,8 +30,8 @@
         }
 
         .logo {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -57,7 +60,7 @@
         }
 
         .nav-link:hover {
-            color: #2EC4B6;
+            color: #FF6B35;
         }
 
         .dropdown {
@@ -90,7 +93,7 @@
 
         .dropdown a:hover {
             background-color: #f5f5f5;
-            color: #2EC4B6;
+            color: #FF6B35;
         }
 
         .hero {
@@ -116,6 +119,12 @@
             color: white;
         }
 
+        .section-separator {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF6B35, transparent);
+            margin: 60px 0;
+        }
+
         .services {
             padding: 80px 5%;
             background-color: #2A526E;
@@ -130,22 +139,25 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 50px; /* Больше отступов */
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.05); /* Светлее */
+            padding: 40px 30px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая граница */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 107, 53, 0.3); /* Акцент на hover */
         }
 
         .service-icon {
@@ -281,7 +293,7 @@
         }
 
         .social-btn {
-            background: #2EC4B6;
+            background: #FF6B35; /* Новый акцентный цвет */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -290,7 +302,7 @@
         }
 
         .social-btn:hover {
-            background: #26a094;
+            background: #e55a2a;
         }
 
         .footer {
@@ -310,7 +322,7 @@
 
         .it-partner {
             font-size: 1.2rem;
-            color: #2EC4B6;
+            color: #FF6B35; /* Новый акцентный цвет */
             margin-top: 20px;
         }
 
@@ -341,7 +353,7 @@
         .clients-category h2 {
             font-size: 1.8rem;
             margin-bottom: 15px;
-            color: #2EC4B6;
+            color: #FF6B35; /* Новый акцентный цвет */
         }
 
         .ads-category p,
@@ -359,7 +371,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #2EC4B6;
+            background: #FF6B35; /* Новый акцентный цвет */
             color: white;
             border: none;
             border-radius: 50%;
@@ -371,7 +383,7 @@
         }
 
         .scroll-top:hover {
-            background: #26a094;
+            background: #e55a2a;
         }
 
         @media (max-width: 768px) {
@@ -458,26 +470,45 @@
         <p>МиканиАрт — полный цикл рекламных решений в Сочи</p>
     </section>
 
+    <div class="section-separator"></div>
+
     <section class="services">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">📢</div>
+                <div class="service-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h3>Реклама</h3>
                 <p>Полный спектр рекламных услуг: от наружной рекламы до цифровых решений. Эффективные кампании для вашего бизнеса.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🎬</div>
+                <div class="service-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h3>Продакшн</h3>
                 <p>Производство видеороликов, аудиороликов, профессиональная съемка и пост-продакшн. Креативные решения для вашего бренда.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">💻</div>
+                <div class="service-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="16" height="16" rx="2" stroke="#FFFFFF" stroke-width="2"/>
+                        <path d="M9 9h6v6H9z" stroke="#FFFFFF" stroke-width="2"/>
+                    </svg>
+                </div>
                 <h3>IT-услуги</h3>
                 <p>Создание сайтов: лендинги, корпоративные сайты, интернет-магазины. Современные решения для вашего онлайн-присутствия.</p>
             </div>
         </div>
     </section>
+
+    <div class="section-separator"></div>
 
     <section class="about">
         <div class="about-content">
@@ -495,6 +526,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-separator"></div>
 
     <section class="portfolio">
         <h2 class="section-title">Портфолио</h2>
@@ -528,6 +561,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-separator"></div>
 
     <section id="contacts" class="contacts">
         <div class="contact-grid">
