@@ -14,8 +14,8 @@
 
         body {
             font-family: 'Playfair Display', serif;
-            color: #29516D;
-            background-color: #D0E6EF;
+            color: #FFFFFF;
+            background-color: #1A2B3C;
             line-height: 1.6;
         }
 
@@ -24,19 +24,19 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: #D0E6EF;
-            border-bottom: 2px solid #29516D;
+            background: #1A2B3C;
+            border-bottom: 2px solid #FF6B35;
         }
 
         .logo {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 18px;
-            color: #29516D;
+            color: white;
         }
 
         .nav-menu {
@@ -45,8 +45,13 @@
             gap: 20px;
         }
 
+        .nav-item {
+            position: relative;
+            margin-left: 0;
+        }
+
         .nav-link {
-            color: #29516D;
+            color: #FFFFFF;
             text-decoration: none;
             font-weight: 500;
             padding: 5px 10px;
@@ -55,7 +60,42 @@
         }
 
         .nav-link:hover {
-            background: rgba(41, 81, 109, 0.1);
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #1A2B3C;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border: 1px solid #FF6B35;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            padding: 12px 15px;
+            display: block;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 107, 53, 0.1);
+            color: #FF6B35;
         }
 
         .hero {
@@ -65,14 +105,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: url('wave.svg') bottom/cover no-repeat, linear-gradient(to bottom, #D0E6EF, #B8DCEA);
+            background: url('wave.svg') bottom/cover no-repeat, linear-gradient(to bottom, #1A2B3C, #0F1A25);
             padding: 40px 5%;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            color: #29516D;
+            color: #FFFFFF;
             font-weight: 600;
         }
 
@@ -80,14 +120,14 @@
             font-size: 1.5rem;
             max-width: 800px;
             margin-bottom: 30px;
-            color: #29516D;
+            color: #FFFFFF;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin: 80px 0 50px;
-            color: #29516D;
+            color: #FFFFFF;
             font-weight: 600;
         }
 
@@ -101,17 +141,17 @@
         }
 
         .service-card {
-            background: white;
+            background: #253A4D;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
-            border: 1px solid #29516D;
+            border: 1px solid #FF6B35;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(41, 81, 109, 0.1);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.1);
         }
 
         .service-icon {
@@ -123,18 +163,18 @@
         .service-icon svg {
             width: 48px;
             height: 48px;
-            fill: #29516D;
+            fill: #FFFFFF;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: #29516D;
+            color: #FFFFFF;
         }
 
         .about {
             padding: 80px 5%;
-            background: #D0E6EF;
+            background: #1A2B3C;
         }
 
         .about-content {
@@ -149,7 +189,7 @@
         .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #29516D;
+            color: #FFFFFF;
             font-weight: 600;
         }
 
@@ -161,18 +201,19 @@
 
         .team-photo {
             height: 150px;
-            background: #29516D;
+            background: #253A4D;
             border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
             color: white;
+            border: 1px solid #FF6B35;
         }
 
         .portfolio {
             padding: 80px 5%;
-            background: #D0E6EF;
+            background: #1A2B3C;
         }
 
         .videos-section {
@@ -189,7 +230,7 @@
         .video-item {
             position: relative;
             height: 200px;
-            background: #29516D;
+            background: #253A4D;
             border-radius: 5px;
             overflow: hidden;
             display: flex;
@@ -217,7 +258,7 @@
         .slider-item {
             min-width: 300px;
             height: 200px;
-            background: #29516D;
+            background: #253A4D;
             border-radius: 5px;
             display: flex;
             align-items: center;
@@ -228,7 +269,7 @@
 
         .contacts {
             padding: 80px 5%;
-            background: #D0E6EF;
+            background: #1A2B3C;
         }
 
         .contact-grid {
@@ -242,7 +283,7 @@
         .contact-info h2 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: #29516D;
+            color: #FFFFFF;
             font-weight: 600;
         }
 
@@ -252,7 +293,7 @@
 
         .contact-item {
             margin-bottom: 10px;
-            color: #29516D;
+            color: #FFFFFF;
         }
 
         .social-links {
@@ -262,7 +303,7 @@
         }
 
         .social-btn {
-            background: #29516D;
+            background: #FF6B35;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -271,11 +312,11 @@
         }
 
         .social-btn:hover {
-            background: #1e3f52;
+            background: #e55a2a;
         }
 
         .footer {
-            background: #29516D;
+            background: #1A2B3C;
             padding: 40px 5%;
             text-align: center;
         }
@@ -291,7 +332,7 @@
 
         .it-partner {
             font-size: 1.2rem;
-            color: #D0E6EF;
+            color: #FF6B35;
             margin-top: 20px;
         }
 
@@ -337,11 +378,49 @@
             </a>
         </div>
         <ul class="nav-menu">
-            <li><a href="ads.html" class="nav-link">Виды рекламы</a></li>
-            <li><a href="production.html" class="nav-link">Продакшн</a></li>
-            <li><a href="for-clients.html" class="nav-link">Рекламодателям</a></li>
-            <li><a href="about.html" class="nav-link">О нас</a></li>
-            <li><a href="index.html#contacts" class="nav-link">Связаться с нами</a></li>
+            <li class="nav-item">
+                <a href="ads.html" class="nav-link">Виды рекламы</a>
+                <div class="dropdown">
+                    <a href="ads.html#tv">Телевидение</a>
+                    <a href="ads.html#radio">Радио</a>
+                    <a href="ads.html#outdoor">Наружная реклама</a>
+                    <a href="ads.html#indoor">Indoor</a>
+                    <a href="ads.html#elevators">Лифты</a>
+                    <a href="ads.html#bus-tv">Маршрутное ТВ</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="production.html" class="nav-link">Продакшн</a>
+                <div class="dropdown">
+                    <a href="production.html#video">Изготовление видеороликов</a>
+                    <a href="production.html#audio">Изготовление аудиороликов</a>
+                    <a href="production.html#adaptation">Адаптация видео/аудио</a>
+                    <a href="production.html#films">Производство видеофильмов</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="for-clients.html" class="nav-link">Рекламодателям</a>
+                <div class="dropdown">
+                    <a href="for-clients.html#presentations">Презентации</a>
+                    <a href="for-clients.html#facade">По фасадам</a>
+                    <a href="for-clients.html#sites">По сайтам</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="it-projects.html" class="nav-link">IT-проекты</a>
+                <div class="dropdown">
+                    <a href="it-projects.html#landing">Лендинг</a>
+                    <a href="it-projects.html#multisite">Многостраничник</a>
+                    <a href="it-projects.html#support">Ведение сайта</a>
+                    <a href="it-projects.html#seo">SEO настройки</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="index.html#contacts" class="nav-link">Свяжитесь с нами</a>
+            </li>
         </ul>
     </header>
 
@@ -355,9 +434,9 @@
         <div class="service-card">
             <div class="service-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#29516D" stroke-width="2" fill="none" stroke-linejoin="round"/>
-                    <path d="M2 17L12 22L22 17" stroke="#29516D" stroke-width="2" fill="none" stroke-linejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="#29516D" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linejoin="round"/>
                 </svg>
             </div>
             <h3>Реклама</h3>
@@ -366,7 +445,7 @@
         <div class="service-card">
             <div class="service-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#29516D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <h3>Продакшн</h3>
@@ -375,8 +454,8 @@
         <div class="service-card">
             <div class="service-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="#29516D" stroke-width="2" fill="none"/>
-                    <path d="M9 9h6v6H9z" stroke="#29516D" stroke-width="2" fill="none"/>
+                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+                    <path d="M9 9h6v6H9z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
                 </svg>
             </div>
             <h3>IT-услуги</h3>
@@ -393,10 +472,10 @@
                 <p>Команда профессионалов с многолетним опытом работы в рекламной индустрии, продакшне и цифровом маркетинге.</p>
             </div>
             <div class="team-photos">
-                <div class="team-photo">Фото сотрудника 1</div>
-                <div class="team-photo">Фото сотрудника 2</div>
-                <div class="team-photo">Фото сотрудника 3</div>
-                <div class="team-photo">Фото сотрудника 4</div>
+                <div class="team-photo">Руководитель</div>
+                <div class="team-photo">Ведущий IT специалист</div>
+                <div class="team-photo">Ведущий дизайнер</div>
+                <div class="team-photo">Руководитель отдела продаж</div>
             </div>
         </div>
     </section>
@@ -450,6 +529,9 @@
                 <a href="https://t.me/username" class="social-btn" target="_blank">Написать в Telegram</a>
                 <a href="mailto:info@mikaniart.ru" class="social-btn">Написать на почту</a>
             </div>
+        </div>
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="#" class="social-btn" style="font-size: 1.2rem; padding: 15px 30px;">Оставить заявку</a>
         </div>
     </section>
 
