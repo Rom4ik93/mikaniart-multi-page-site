@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МиканиАрт - рекламное агентство в Сочи</title>
-    <!-- Подключаем шрифт Bahnschrift -->
     <style>
         @font-face {
             font-family: 'Bahnschrift';
@@ -51,6 +50,10 @@
             gap: 20px;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
         .nav-link {
             color: #FFFFFF;
             text-decoration: none;
@@ -62,6 +65,42 @@
 
         .nav-link:hover {
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-item:hover .dropdown,
+        .nav-item.active .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            padding: 12px 15px;
+            display: block;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #D0E6EF;
         }
 
         .hero {
@@ -269,8 +308,8 @@
         }
 
         .social-btn {
-            background: #FF6B35;
-            color: white;
+            background: #D0E6EF;
+            color: #1A2B3C;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
@@ -278,7 +317,7 @@
         }
 
         .social-btn:hover {
-            background: #e55a2a;
+            background: #b8dce9;
         }
 
         .footer {
@@ -298,40 +337,61 @@
 
         .it-partner {
             font-size: 1.2rem;
-            color: #FF6B35;
+            color: #D0E6EF;
             margin-top: 20px;
         }
 
+        /* Мобильное меню */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 15px;
+            .nav-toggle {
+                display: flex;
             }
 
             .nav-menu {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                gap: 10px;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
             }
 
-            .nav-item {
-                margin: 5px 10px;
+            .nav-menu.active {
+                transform: translateY(0);
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                margin-top: 10px;
+                background: rgba(255, 255, 255, 0.1);
             }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
+            .dropdown a {
+                color: #D0E6EF;
             }
         }
     </style>
@@ -343,13 +403,55 @@
                 <img src="logo.svg" alt="Логотип МиканиАрт" style="width:180px; height:180px;">
             </a>
         </div>
-        <ul class="nav-menu">
-            <li><a href="ads.html" class="nav-link">Виды рекламы</a></li>
-            <li><a href="production.html" class="nav-link">Продакшн</a></li>
-            <li><a href="for-clients.html" class="nav-link">Рекламодателям</a></li>
-            <li><a href="about.html" class="nav-link">О нас</a></li>
-            <li><a href="it-projects.html" class="nav-link">IT-проекты</a></li>
-            <li><a href="index.html#contacts" class="nav-link">Связаться с нами</a></li>
+        <div class="nav-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="ads.html" class="nav-link">Виды рекламы</a>
+                <div class="dropdown">
+                    <a href="ads.html#tv">Телевидение</a>
+                    <a href="ads.html#radio">Радио</a>
+                    <a href="ads.html#outdoor">Наружная реклама</a>
+                    <a href="ads.html#indoor">Indoor</a>
+                    <a href="ads.html#elevators">Лифты</a>
+                    <a href="ads.html#bus-tv">Маршрутное ТВ</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="production.html" class="nav-link">Продакшн</a>
+                <div class="dropdown">
+                    <a href="production.html#video">Изготовление видеороликов</a>
+                    <a href="production.html#audio">Изготовление аудиороликов</a>
+                    <a href="production.html#adaptation">Адаптация видео/аудио</a>
+                    <a href="production.html#films">Производство видеофильмов</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="for-clients.html" class="nav-link">Рекламодателям</a>
+                <div class="dropdown">
+                    <a href="for-clients.html#presentations">Презентации</a>
+                    <a href="for-clients.html#facade">По фасадам</a>
+                    <a href="for-clients.html#sites">По сайтам</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="it-projects.html" class="nav-link">IT-проекты</a>
+                <div class="dropdown">
+                    <a href="it-projects.html#landing">Лендинг</a>
+                    <a href="it-projects.html#multisite">Многостраничник</a>
+                    <a href="it-projects.html#support">Ведение сайта</a>
+                    <a href="it-projects.html#seo">SEO настройки</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="index.html#contacts" class="nav-link">Связаться с нами</a>
+            </li>
         </ul>
     </header>
 
@@ -474,5 +576,22 @@
             <div class="it-partner">Создание сайтов → ваш IT-партнёр от МиканиАрт</div>
         </div>
     </footer>
+
+    <script>
+        // Мобильное меню
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
